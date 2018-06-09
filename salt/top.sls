@@ -1,3 +1,3 @@
 base:
-  'salt':
+  'salt.local.lan':
      - master
