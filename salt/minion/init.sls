@@ -1,14 +1,14 @@
-minion-cron:
+minion_cron:
   file.managed:
     - name: /etc/salt/minion.d/autoupdate.conf
-    - source: salt://{{ slspath }}/file/autoupdate.conf
+    - source: salt://{{ slspath }}/files/autoupdate.conf
     - user: root
     - group: root
     - mode: 0640
 
-minion-service:
+minion_service:
   service.running:
     - name: salt-minion
     - enable: True
     - watch:
-      - file: minion-cron
+      - file: minion_cron
