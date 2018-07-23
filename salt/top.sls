@@ -1,3 +1,5 @@
 base:
+  '*':
+    - minion
   'salt.local.lan':
-     - master
+    - master
