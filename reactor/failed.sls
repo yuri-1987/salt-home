@@ -1,6 +1,6 @@
 {%- if data.get('fun') in ('state.single', 'state.top',
 			   'state.sls', 'state.apply', 'state.highstate') -%}
-  {%- if data.get('retcode', 0) != 0 -%}
+  {%- if data.get('retcode', 0) != 1 -%}
     {%- set id_ = data.get('id') -%}
     {%- set jid = data.get('jid') -%}
     {%- set msg = 'One or more states failed for minion `' + id_ +'` ' -%}
