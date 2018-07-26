@@ -9,8 +9,9 @@ backport_kernel:
     #   - kernel.latest_installed: install_latest_kernel
 
 update_packages:
-   pkg.uptodate:
+   pkg.latest:
      - refresh: True
+     - fromrepo: stretch-backports
      - kwarg:
        fromrepo: stretch-backports
 
