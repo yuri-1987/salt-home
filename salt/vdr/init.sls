@@ -5,9 +5,16 @@ backport_kernel:
     - name: deb http://ftp.debian.org/debian stretch-backports main
     - dist: stretch-backports
     - file: /etc/apt/sources.list.d/stretch-backports.list
-#     - require_in:
-#       - pkg: linux-image
+    # - require_in:
+    #   - kernel.latest_installed: install_latest_kernel
 
-#   pkg.latest:
-#     - name: linux-image
-#     - refresh: True
+dist_upgrade:
+  module.run:
+    - name: aptpkg.upgrade
+    - m_name: aptpkg.upgrade
+    - refresh: true
+    - dist_upgrade: false
+
+
+# install_latest_kernel:
+#   kernel.latest_installed: []
