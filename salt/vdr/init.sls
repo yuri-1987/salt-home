@@ -11,6 +11,7 @@ backport_kernel:
 update_packages:
    pkg.uptodate:
      - refresh: True
+     - dist_upgrade: True
      - fromrepo: stretch-backports
 
 # install_latest_kernel:
