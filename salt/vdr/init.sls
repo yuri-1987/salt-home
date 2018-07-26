@@ -1,4 +1,4 @@
-### Kernel update for MyGica230t2
+### Backport Repo for Kernel update
 backport_kernel:
   pkgrepo.managed:
     - humanname: stretch-backports
@@ -12,6 +12,13 @@ update_packages:
      - dist_upgrade: True
      - fromrepo: stretch-backports
 
-update_kernel:
-  module.run:
-    - name: kernelpkg_linux_apt.upgrade
+### Download and extract firmware for mygica230c
+extract_myapp:
+  archive.extracted:
+    - name: /lib/firmware/
+    - source: https://bitbucket.org/CrazyCat/media_build/downloads/dvb-firmwares.tar.bz2
+    - user: root
+    - group: root
+    - unless:
+      - ls /lib/firmware/dvb-demod-si2168-d60-01.fw
+      - ls /lib/firmware/dvb-tuner-si2141-a10-01.fw
