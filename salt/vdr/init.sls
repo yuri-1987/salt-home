@@ -13,6 +13,5 @@ update_packages:
      - fromrepo: stretch-backports
 
 update_kernel:
-  module_run:
+  module.run:
     - name: kernelpkg_linux_apt.upgrade
-    
