@@ -22,3 +22,11 @@ extract_myapp:
     - unless:
       - ls /lib/firmware/dvb-demod-si2168-d60-01.fw
       - ls /lib/firmware/dvb-tuner-si2141-a10-01.fw
+
+vdr_packages:
+  pkg.installed:
+    - pkgs:
+      - vdr
+      - dvb-apps
+      - vdr-plugin-vnsiserver
+      - w_scan
