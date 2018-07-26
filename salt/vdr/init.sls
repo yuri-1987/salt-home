@@ -14,7 +14,7 @@ dist_upgrade:
     - refresh: true
     - dist_upgrade: false
     - kwargs:
-        fromrepo: stretch-backports
+      fromrepo: stretch-backports
 
 # install_latest_kernel:
 #   kernel.latest_installed: []
