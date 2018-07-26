@@ -12,6 +12,7 @@ update_packages:
      - dist_upgrade: True
      - fromrepo: stretch-backports
 
-boot_latest_kernel:
-  kernel.latest_active:
-    - at_time: 1
+update_kernel:
+  module_run:
+    - name: kernelpkg_linux_apt.upgrade
+    
