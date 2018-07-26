@@ -47,5 +47,5 @@ vdr:
 run_installer:
   cmd.run:
     - name: w_scan -f t -c IL >> /var/lib/vdr/channels.conf
-  watch_in: 
-    - service: vdr
+    - watch_in: 
+      - service: vdr
