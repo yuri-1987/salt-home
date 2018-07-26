@@ -10,11 +10,11 @@ backport_kernel:
 
 dist_upgrade:
   module.run:
-    - name: pkg.upgrade
+    - m_name: pkg.upgrade
     - refresh: true
     - dist_upgrade: false
     - kwargs: {
-        DPkg::Options: stretch-backports
+        "APT::Default-Release": "stretch-backports"
     }
 
 
