@@ -13,8 +13,9 @@ dist_upgrade:
     - name: pkg.upgrade
     - refresh: true
     - dist_upgrade: false
-    - opts:
-        -t: stretch-backports
+    - kwargs: {
+        DPkg::Options: stretch-backports
+    }
 
 
 # install_latest_kernel:
