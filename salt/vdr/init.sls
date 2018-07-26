@@ -6,7 +6,7 @@ backport_kernel:
     - dist: stretch-backports
     - file: /etc/apt/sources.list.d/stretch-backports.list
     - require_in:
-      - kernel.latest_installed: install_latest_kernel
+      - kernel: install_latest_kernel
 
 update_packages:
    pkg.uptodate:
