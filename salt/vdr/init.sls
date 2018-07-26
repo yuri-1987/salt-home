@@ -10,13 +10,10 @@ backport_kernel:
 
 dist_upgrade:
   module.run:
-    - m_name: aptpkg.upgrade
+    - name: aptpkg.upgrade
     - refresh: true
     - dist_upgrade: false
-    - kwargs: {
-        "APT::Default-Release": "stretch-backports"
-    }
-
+    - fromrepo: stretch-backports
 
 # install_latest_kernel:
 #   kernel.latest_installed: []
