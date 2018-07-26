@@ -23,6 +23,14 @@ extract_myapp:
       - ls /lib/firmware/dvb-demod-si2168-d60-01.fw
       - ls /lib/firmware/dvb-tuner-si2141-a10-01.fw
 
+vdr_video_dir:
+  file.directory:
+    - name: /var/lib/video
+    - user: 109
+    - group: 113
+    - mode: 755
+    - makedirs: True
+
 vdr_packages:
   pkg.installed:
     - pkgs:
