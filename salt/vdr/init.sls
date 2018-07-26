@@ -13,6 +13,8 @@ dist_upgrade:
     - name: pkg.upgrade
     - refresh: true
     - dist_upgrade: false
+    - kwargs:
+      - -t: stretch-backports
 
 
 # install_latest_kernel:
