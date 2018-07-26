@@ -37,7 +37,7 @@ vdr_packages:
       - vdr
       - dvb-apps
       - vdr-plugin-vnsiserver
-      - w_scan
+      - w-scan
 
 vdr:
   service.running:
