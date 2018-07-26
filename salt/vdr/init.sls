@@ -38,3 +38,13 @@ vdr_packages:
       - dvb-apps
       - vdr-plugin-vnsiserver
       - w_scan
+
+vdr:
+  service.running:
+    - enable: True
+    - reload: True
+
+run_installer:
+  cmd.run:
+    - name: w_scan -f t -c IL >> /var/lib/vdr/channels.conf
+  watch_in: vdr
