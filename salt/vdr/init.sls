@@ -11,7 +11,6 @@ backport_kernel:
 dist_upgrade:
   module.run:
     - name: aptpkg.upgrade
-    - m_name: aptpkg.upgrade
     - refresh: true
     - dist_upgrade: false
 
