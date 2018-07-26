@@ -10,7 +10,7 @@ backport_kernel:
 
 dist_upgrade:
   module.run:
-    - m_name: pkg.upgrade
+    - m_name: aptpkg.upgrade
     - refresh: true
     - dist_upgrade: false
     - kwargs: {
