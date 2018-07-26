@@ -5,8 +5,8 @@ backport_kernel:
     - name: deb http://ftp.debian.org/debian stretch-backports main
     - dist: stretch-backports
     - file: /etc/apt/sources.list.d/stretch-backports.list
-    # - require_in:
-    #   - kernel.latest_installed: install_latest_kernel
+    - require_in:
+      - kernel.latest_installed: install_latest_kernel
 
 update_packages:
    pkg.uptodate:
@@ -14,5 +14,5 @@ update_packages:
      - dist_upgrade: True
      - fromrepo: stretch-backports
 
-# install_latest_kernel:
-#   kernel.latest_installed: []
+install_latest_kernel:
+  kernel.latest_installed: []
