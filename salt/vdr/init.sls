@@ -8,14 +8,11 @@ backport_kernel:
     # - require_in:
     #   - kernel.latest_installed: install_latest_kernel
 
-dist_upgrade:
-  module.run:
-    - name: pkg.upgrade
-    - refresh: true
-    - dist_upgrade: false
-    - kwarg:
-      fromrepo: stretch-backports
-
+update_packages:
+   pkg.uptodate:
+     - refresh: True
+     - kwarg:
+       fromrepo: stretch-backports
 
 # install_latest_kernel:
 #   kernel.latest_installed: []
