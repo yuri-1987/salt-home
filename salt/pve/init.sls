@@ -1,3 +1,4 @@
 include:
   - .mounts
   - .pkgs
+  - .nfsexports
