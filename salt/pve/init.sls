@@ -1,3 +1,3 @@
 include:
-  - mounts
-  - pkgs
+  - .mounts
+  - .pkgs
