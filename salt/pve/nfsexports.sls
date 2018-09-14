@@ -16,6 +16,7 @@ nas_nfs_export:
 backup_nfs_export:
   nfs_export.present:
     - name: '/mnt/backup/'
+    - clients:
       - hosts: '192.168.1.0/24'
         options:
           - 'rw'
