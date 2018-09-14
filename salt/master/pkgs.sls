@@ -3,3 +3,6 @@ gpg:
     - pkgs:
       - python-gnupg
       - rng-tools
+
+libssl-dev:
+  pkg.installed
