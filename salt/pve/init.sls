@@ -1,2 +1,3 @@
 include:
   - mounts
+  - pkgs
