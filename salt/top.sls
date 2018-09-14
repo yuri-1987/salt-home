@@ -7,3 +7,6 @@ base:
 
   'vdr.local.lan':
     - vdr
+
+  'pve.local.lan':
+    - pve
