@@ -1,3 +1,6 @@
+include:
+  - .pkgs
+
 set_gitfs:
   file.managed:
     - name: /etc/salt/master.d/fileserver.conf
