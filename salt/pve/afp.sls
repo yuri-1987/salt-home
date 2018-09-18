@@ -6,8 +6,15 @@ afp:
       - avahi-daemon
       - libnss-mdns
 
-timemachine:
+timemachine_group:
+  group.present:
+    - name: timemachine
+    - gid: 9999
+    - system: True
+
+timemachine_user:
   user.present:
+    - name: timemachine
     - fullname: timemachine
     - shell: /bin/bash
     - home: /home/timemachine
