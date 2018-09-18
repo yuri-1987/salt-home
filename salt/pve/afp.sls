@@ -7,6 +7,8 @@ afp:
       - libnss-mdns
 
 /etc/nsswitch.conf:
-  file.append:
-    - text:
-      - "hosts:          files mdns4_minimal [NOTFOUND=return] dns mdns4 mdns"
+  file.replace:
+    - pattern: |
+        hosts(.+?)
+    - repl: "hosts:          files mdns4_minimal [NOTFOUND=return] dns mdns4 mdns"
+    - append_if_not_found: true
