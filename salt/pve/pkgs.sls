@@ -4,5 +4,8 @@ nfs:
       - nfs-common
       - nfs-kernel-server
 
-unrar-free:
-  pkg.installed
+rar:
+  pkg.installed:
+    - pkgs:
+      - unar
+      - unrar-free
