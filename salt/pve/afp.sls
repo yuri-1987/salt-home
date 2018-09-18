@@ -10,7 +10,7 @@ afp:
   file.replace:
     - pattern: |
         hosts(.*)
-    - repl: "hosts:          files mdns4_minimal [NOTFOUND=return] dns mdns4 mdns"
+    - repl: "hosts:          files mdns4_minimal [NOTFOUND=return] dns mdns4 mdns"\n
     - append_if_not_found: true
 
 avahi-advertise:
