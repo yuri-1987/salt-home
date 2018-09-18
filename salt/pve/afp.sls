@@ -45,6 +45,10 @@ avahi-advertise:
   file.managed:
     - source: salt://{{ slspath }}/files/AppleVolumes.default
 
+/etc/netatalk/afpd.conf:
+  file.managed:
+    - source: salt://{{ slspath }}/files/afpd.conf
+
 {% for k,v in ({'ATALKD_RUN':'no','PAPD_RUN':'no','CNID_METAD_RUN':'yes','AFPD_RUN':'yes','TIMELORD_RUN':'no','A2BOOT_RUN':'no'}).items() %}
 netatalk-{{ k }}:
   file.line:
@@ -59,6 +63,7 @@ netatalk.service:
     - enable: True
     - watch:
       - file: /etc/netatalk/AppleVolumes.default
+      - file: /etc/netatalk/afpd.conf
 
 avahi-daemon:
   service.running:
