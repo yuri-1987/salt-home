@@ -30,7 +30,7 @@ avahi-advertise:
         :DEFAULT: options:upriv,usedots,tm
         /mnt/nas/timemachine/mac-mini "TimeMachine Mac-Mini"
 
-{% for k,v in {'ATALKD_RUN':'no','PAPD_RUN':'no','CNID_METAD_RUN':'yes','AFPD_RUN':'yes','TIMELORD_RUN':'no','A2BOOT_RUN':'no'} %}
+{% for k,v in ({'ATALKD_RUN':'no','PAPD_RUN':'no','CNID_METAD_RUN':'yes','AFPD_RUN':'yes','TIMELORD_RUN':'no','A2BOOT_RUN':'no'}) %}
 netatalk-{{ k }}:
   file.line:
     - match: {{ k }}
