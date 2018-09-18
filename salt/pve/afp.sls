@@ -25,10 +25,8 @@ avahi-advertise:
     - makedirs: True
 
 /etc/netatalk/AppleVolumes.default:
-  file.append:
-    - text: |
-        :DEFAULT: options:upriv,usedots,tm
-        /mnt/nas/timemachine/mac-mini      "TimeMachine Mac-Mini"     allow:yurilevin,root       cnidscheme:cdb options:usedots,upriv,tm
+  file.managed:
+    - source: {{ slspath }}/files/AppleVolumes.default
 
 {% for k,v in ({'ATALKD_RUN':'no','PAPD_RUN':'no','CNID_METAD_RUN':'yes','AFPD_RUN':'yes','TIMELORD_RUN':'no','A2BOOT_RUN':'no'}).items() %}
 netatalk-{{ k }}:

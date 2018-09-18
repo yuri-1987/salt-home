@@ -1,0 +1,4 @@
+~/			"Home Directory"
+
+:DEFAULT: options:upriv,usedots,tm
+/mnt/nas/timemachine/mac-mini      "TimeMachine Mac-Mini"     allow:yurilevin,root       cnidscheme:cdb options:usedots,upriv,tm
