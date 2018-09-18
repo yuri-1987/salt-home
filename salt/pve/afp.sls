@@ -6,6 +6,15 @@ afp:
       - avahi-daemon
       - libnss-mdns
 
+timemachine:
+  user.present:
+    - fullname: timemachine
+    - shell: /bin/bash
+    - home: /home/timemachine
+    - uid: 9999
+    - gid: 9999
+    - password: $1$GSVHfGYk$zckEfZEgQRKnp1QlIywg31
+
 /etc/nsswitch.conf:
   file.line:
     - match: "^hosts:"
@@ -23,6 +32,7 @@ avahi-advertise:
 /mnt/nas/timemachine/mac-mini:
   file.directory:
     - makedirs: True
+    - user: timemachine
 
 /etc/netatalk/AppleVolumes.default:
   file.managed:
