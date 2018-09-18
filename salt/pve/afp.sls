@@ -21,4 +21,5 @@ avahi-advertise:
     - mode: 644
 
 /mnt/nas/timemachine/mac-mini:
-  file.directory
+  file.directory:
+    - makedirs: True
