@@ -9,6 +9,6 @@ afp:
 /etc/nsswitch.conf:
   file.replace:
     - pattern: |
-        hosts(.+?)
+        hosts(.*)
     - repl: "hosts:          files mdns4_minimal [NOTFOUND=return] dns mdns4 mdns"
     - append_if_not_found: true
