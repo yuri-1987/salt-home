@@ -16,9 +16,9 @@ avahi-advertise:
   file.managed:
     - name: /etc/avahi/services/afpd.service
     - source: salt://{{ slspath }}/files/afpd.service
-    - user: root
-    - group: root
-    - mode: 644
+    - user: avahi
+    - group: avahi
+    - mode: 666
 
 /mnt/nas/timemachine/mac-mini:
   file.directory:
@@ -38,3 +38,17 @@ netatalk-{{ k }}:
     - mode: replace
     - content: {{ k }}={{ v }}
 {% endfor %}
+
+netatalk.service:
+  service.running:
+    - enable: True
+    - reload: True
+    - watch:
+      - file: /etc/netatalk/AppleVolumes.default
+
+avahi-daemon:
+  service.running:
+    - enable: True
+    - reload: True
+    - watch:
+      - file: avahi-advertise
