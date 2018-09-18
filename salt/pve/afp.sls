@@ -20,3 +20,6 @@ avahi-advertise:
     - user: root
     - group: root
     - mode: 644
+
+/mnt/nas/timemachine/mac-mini:
+  file.directory
