@@ -47,6 +47,5 @@ netatalk.service:
 avahi-daemon:
   service.running:
     - enable: True
-    - reload: True
     - watch:
       - file: avahi-advertise
