@@ -26,7 +26,7 @@ avahi-advertise:
 
 /etc/netatalk/AppleVolumes.default:
   file.managed:
-    - source: {{ slspath }}/files/AppleVolumes.default
+    - source: salt://{{ slspath }}/files/AppleVolumes.default
 
 {% for k,v in ({'ATALKD_RUN':'no','PAPD_RUN':'no','CNID_METAD_RUN':'yes','AFPD_RUN':'yes','TIMELORD_RUN':'no','A2BOOT_RUN':'no'}).items() %}
 netatalk-{{ k }}:
