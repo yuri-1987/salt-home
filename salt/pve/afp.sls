@@ -40,7 +40,6 @@ netatalk-{{ k }}:
 netatalk.service:
   service.running:
     - enable: True
-    - reload: True
     - watch:
       - file: /etc/netatalk/AppleVolumes.default
 
