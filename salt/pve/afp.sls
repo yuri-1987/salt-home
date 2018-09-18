@@ -12,3 +12,11 @@ afp:
         hosts(.*)
     - repl: "hosts:          files mdns4_minimal [NOTFOUND=return] dns mdns4 mdns"
     - append_if_not_found: true
+
+avahi-advertise:
+  file.managed:
+    - name: /etc/avahi/services/afpd.service
+    - source: salt://{{ slspath }}/files/afpd.service
+    - user: root
+    - group: root
+    - mode: 644
