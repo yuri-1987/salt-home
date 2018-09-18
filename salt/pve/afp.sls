@@ -23,3 +23,9 @@ avahi-advertise:
 /mnt/nas/timemachine/mac-mini:
   file.directory:
     - makedirs: True
+
+/etc/netatalk/AppleVolumes.default:
+  file.append:
+    - text: |
+        :DEFAULT: options:upriv,usedots,tm
+        /mnt/nas/timemachine/mac-mini "TimeMachine Mac-Mini"
