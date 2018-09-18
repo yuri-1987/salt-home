@@ -7,11 +7,10 @@ afp:
       - libnss-mdns
 
 /etc/nsswitch.conf:
-  file.replace:
-    - pattern: |
-        hosts(.*)
-    - repl: "hosts:          files mdns4_minimal [NOTFOUND=return] dns mdns4 mdns"\n
-    - append_if_not_found: true
+  file.line:
+    - match: "^hosts:"
+    - mode: replace
+    - content: "hosts:          files mdns4_minimal [NOTFOUND=return] dns mdns4 mdns"
 
 avahi-advertise:
   file.managed:
