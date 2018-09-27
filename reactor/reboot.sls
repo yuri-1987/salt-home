@@ -1,4 +1,5 @@
 reboot_minions:
-  local.salt.function:
-    - name: system.reboot
+  local.function:
     - tgt: {{ data['id'] }}
+    - arg:
+      - system.reboot
