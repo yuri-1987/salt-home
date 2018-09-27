@@ -3,6 +3,7 @@ minion_highstate:
     - tgt: {{ data['id'] }}
 
 reboot:
-  local.module.run:
+  local.cmd.run:
     - tgt: {{ data['id'] }}
-    - arg: system.reboot
+    - arg:
+      - reboot
