@@ -1,5 +1,5 @@
 reboot_minions:
   local.cmd.run:
-    - tgt: {{ data['id'] }}
+    - tgt: {{ data['name'] }}
     - arg:
       - reboot
