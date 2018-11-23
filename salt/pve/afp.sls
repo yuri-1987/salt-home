@@ -20,7 +20,7 @@ timemachine_user:
     - home: /home/timemachine
     - uid: 9999
     - gid: 9999
-    - password: $1$GSVHfGYk$zckEfZEgQRKnp1QlIywg31
+    - password: $1$rmmKSQDH$sfR44PNahvdcexE1fVz9e1
 
 /etc/nsswitch.conf:
   file.line:
