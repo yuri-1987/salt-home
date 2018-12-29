@@ -16,7 +16,7 @@ nfs-common:
     - persist: True
     - mkmnt: True
 
-{% for sysopt in ['rmem_default','rmem_max','wmem_default','wmem_max'] %}
+{% for sysopt in ['net.core.rmem_default','net.core.rmem_max','net.core.wmem_default','net.core.wmem_max'] %}
 
 {{ sysopt }}:
   sysctl.present:
