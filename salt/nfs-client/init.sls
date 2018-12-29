@@ -16,9 +16,9 @@ nfs-common:
     - persist: True
     - mkmnt: True
 
-{%- for opt in ['rmem_default', 'rmem_max', 'wmem_default', 'wmem_max'] -%}
+{% for sysopt in ['rmem_default','rmem_max','wmem_default','wmem_max'] %}
 
-{{opt}}:
+{{ sysopt }}:
   sysctl.present:
     - value: 262144
 
