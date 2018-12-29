@@ -4,6 +4,7 @@
 {%- set criProvider = pillar['kubernetes']['worker']['runtime']['provider'] -%}
 
 include:
+  - 
   - k8s-worker/cri/{{ criProvider }}
   - k8s-worker/cni
 {% if os == "Debian" or os == "Ubuntu" %}
