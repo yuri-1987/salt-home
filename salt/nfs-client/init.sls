@@ -15,3 +15,11 @@ nfs-common:
     - pass_num: 0
     - persist: True
     - mkmnt: True
+
+{%- for opt in ['rmem_default', 'rmem_max', 'wmem_default', 'wmem_max'] -%}
+
+{{opt}}:
+  sysctl.present:
+    - value: 262144
+
+{% endfor %}
