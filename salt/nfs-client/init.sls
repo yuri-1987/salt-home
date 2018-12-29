@@ -10,7 +10,7 @@ nfs-common:
   mount.mounted:
     - device: nas.local.lan:/mnt/nas
     - fstype: nfs
-    - opts: vers=4,rsize=65535,wsize=65535,fsc
+    - opts: vers=4.1,rsize=32768,wsize=32768,fsc
     - dump: 0
     - pass_num: 0
     - persist: True
