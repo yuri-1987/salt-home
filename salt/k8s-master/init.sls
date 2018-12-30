@@ -2,6 +2,7 @@
 {%- set masterCount = pillar['kubernetes']['master']['count'] -%}
 
 include:
+  - k8s-certs
   - k8s-master/etcd
 
 /usr/bin/kube-apiserver:
