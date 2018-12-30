@@ -1,5 +1,5 @@
 {
-  "CN": "kubernetes",
+  "CN": "cluster.local",
   "hosts": [
     "10.32.0.1",
     "kubernetes.default",
