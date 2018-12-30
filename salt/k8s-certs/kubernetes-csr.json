@@ -8,6 +8,12 @@
     "kube-node-01.local.lan",
     "kube-node-02.local.lan",
     "kube-node-03.local.lan",
+    "kube-node-01",
+    "kube-node-02",
+    "kube-node-03",
+    "192.168.1.170",
+    "192.168.1.172",
+    "192.168.1.176",
     "127.0.0.1"
   ],
   "key": {
