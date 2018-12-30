@@ -9,10 +9,10 @@ kubernetes:
         hostname: kube-node-01.local.lan
         ipaddr: 192.168.1.172
       node02:
-        hostname: kube-node-01.local.lan
+        hostname: kube-node-02.local.lan
         ipaddr: 192.168.1.176
       node03:
-        hostname: kube-node-01.local.lan
+        hostname: kube-node-03.local.lan
         ipaddr: 192.168.1.170
     encryption-key: |
         -----BEGIN PGP MESSAGE-----
