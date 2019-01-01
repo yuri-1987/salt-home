@@ -1,3 +1,4 @@
 mine_functions:
-  network.ip_addrs: [eth0]
-  grains.item: [fqdn]
+  grains.item:
+    - fqdn
+    - ip4_interfaces
