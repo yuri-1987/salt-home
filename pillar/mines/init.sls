@@ -1,3 +1,3 @@
 mine_functions:
   network.ip_addrs: [eth0]
-  fqdn: []
+  network.get_fqdn: []
