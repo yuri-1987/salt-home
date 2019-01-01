@@ -5,6 +5,12 @@ include:
   - k8s-certs
   - k8s-master/etcd
 
+tmp_config:
+  file.managed:
+    - name: /tmp/config
+    - source: salt://k8s-master/configtest
+    - template: jinja
+
 /usr/bin/kube-apiserver:
   file.managed:
     - source: https://storage.googleapis.com/kubernetes-release/release/{{ k8sVersion }}/bin/linux/amd64/kube-apiserver
