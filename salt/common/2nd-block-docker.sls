@@ -1,13 +1,13 @@
-{%- if salt['partition.get_block_device']()[1] == "sdb" -%}
+{%- set dockerblock = salt['cmd.run']("lsblk -S | grep 0:0:0:1 | awk '{print \$1}'") -%}
 docker_storage_volume_format:
   blockdev.formatted:
-    - name: /dev/sdb
+    - name: /dev/{{ dockerblock }}
     - fs_type: ext4
 
 docker_storage_volume_mount:
   mount.mounted:
-    - name: /var/lib/docker
-    - device: /dev/sdb
+    - name: /var/lib/docker1
+    - device: /dev/{{ dockerblock }}
     - fstype: ext4
     - mkmnt: True
     - opts: defaults
@@ -17,4 +17,3 @@ docker_storage_volume_mount:
     - pass_num: 0
     - require:
       - blockdev: docker_storage_volume_format
-{% endif %}
