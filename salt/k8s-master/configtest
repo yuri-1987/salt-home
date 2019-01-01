@@ -1,3 +1,3 @@
-{% for server, addrs in salt['mine.get']('roles:k8s-master', 'network.ip_addrs', tgt_type='grain') | dictsort() %}
+{% for server, addrs in salt['mine.get']('kube-*', 'network.ip_addrs', tgt_type='glob') | dictsort() %}
 server {{ server }} {{ addrs }}:80 check
 {% endfor %}
