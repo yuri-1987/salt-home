@@ -6,7 +6,7 @@ docker_storage_volume_format:
 
 docker_storage_volume_mount:
   mount.mounted:
-    - name: /var/lib/docker1
+    - name: /var/lib/docker
     - device: /dev/{{ dockerblock }}
     - fstype: ext4
     - mkmnt: True
