@@ -1,0 +1,32 @@
+{
+  "CN": "Kubernetes",
+  "hosts": [
+    "10.32.0.1",
+    "kubernetes.default",
+    "kubernetes.default.svc.cluster.local",
+    "k8s.local.lan",
+    "kube-node-01.local.lan",
+    "kube-node-02.local.lan",
+    "kube-node-03.local.lan",
+    "kube-node-01",
+    "kube-node-02",
+    "kube-node-03",
+    "192.168.1.170",
+    "192.168.1.172",
+    "192.168.1.176",
+    "127.0.0.1"
+  ],
+  "key": {
+    "algo": "ecdsa",
+    "size": 256
+  },
+  "names": [
+    {
+      "C": "ANY",
+      "L": "Country",
+      "O": "Kubernetes",
+      "OU": "Cluster",
+      "ST": "Local"
+    }
+  ]
+}
