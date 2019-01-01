@@ -1,3 +1,3 @@
 mine_functions:
   network.ip_addrs: [eth0]
-  network.get_fqdn: []
+  grains.item: [fqdn]
