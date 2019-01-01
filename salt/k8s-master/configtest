@@ -1,4 +1,4 @@
-{% for k,v in salt['mine.get']('kube-*', 'grains.item', tgt_type='glob') %}
+{% for k,v in salt['mine.get']('kube-*', 'grains.item', tgt_type='glob').items() %}
 key: {{ k }} : value: {{ v }}
 {% endfor %}
 {% for server, addrs in salt['mine.get']('kube-*', 'network.ip_addrs', tgt_type='glob') | dictsort() %}
