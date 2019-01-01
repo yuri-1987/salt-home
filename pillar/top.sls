@@ -4,3 +4,4 @@
 
   'kube-*':
     - kube-configs
+    - mines
