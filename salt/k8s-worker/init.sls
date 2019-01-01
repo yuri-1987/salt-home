@@ -14,9 +14,6 @@ glusterfs-client:
 
 conntrack:
   pkg.latest
-
-nfs-common:
-  pkg.latest
 {% endif %} 
 
 socat:
