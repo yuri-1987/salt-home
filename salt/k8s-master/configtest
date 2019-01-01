@@ -1,5 +1,5 @@
-{% set fqdn = salt['mine.get']('kube-*', 'network.get_fqdn', tgt_type='glob') %}
+{% set fqdn = salt['mine.get']('kube-*', 'grains.item').items() %}
 {% for server, addrs in salt['mine.get']('kube-*', 'network.ip_addrs', tgt_type='glob') | dictsort() %}
 server {{ server }} {{ addrs[0] }}:80 check
-fqdn: {{ fqdn[0] }}
+fqdn: {{ fqdn }}
 {% endfor %}
