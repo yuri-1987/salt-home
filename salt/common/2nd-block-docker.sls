@@ -1,4 +1,4 @@
-{% set dockerblock = salt['cmd.run']('lsblk -S | grep 0:0:0:1 | awk \'{print \$1}\'') %}
+{% set dockerblock = salt['cmd.shell']('lsblk -S | grep 0:0:0:1 | awk \'{print $1}\'') %}
 docker_storage_volume_format:
   blockdev.formatted:
     - name: /dev/{{ dockerblock }}
