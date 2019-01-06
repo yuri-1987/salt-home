@@ -1,6 +1,0 @@
-{% set etcdhosts = [] %}
-{% for k,v in salt['mine.get']('kube-*', 'grains.item', tgt_type='glob').items() %}
-{% set etcdhost = v['fqdn'] + '=https://' + v['ip4_interfaces']['eth0'][0] + ':2380' %}
-{% do etcdhosts.append(etcdhost) %}
-{% endfor %}
-{{ etcdhosts|join(',') }}
