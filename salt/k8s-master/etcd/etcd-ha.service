@@ -1,5 +1,4 @@
 ### THIS FILE IS MANAGED BY SALTSTACK
-{%- set clusterDomain =  pillar['kubernetes']['domain'] -%}
 {%- set hostname = salt['grains.get']('fqdn') -%}
 {%- set selfip = ['grains.get']('ip4_interfaces:eth0:0') -%}
 {%- set etcdhosts = [] -%}
