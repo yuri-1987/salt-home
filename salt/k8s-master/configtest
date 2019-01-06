@@ -3,4 +3,4 @@
 {% set etcdhost = v['fqdn'] + '=https://' + v['ip4_interfaces']['eth0'][0] + ':2380' %}
 {% do etcdhosts.append(etcdhost) %}
 {% endfor %}
-{{ etcdhosts }}
+{{ etcdhosts|join(',') }}
