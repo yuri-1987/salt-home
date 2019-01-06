@@ -1,8 +1,8 @@
 ### THIS FILE IS MANAGED BY SALTSTACK
 {%- set hostname = salt['grains.get']('fqdn') -%}
-{%- set selfip = ['grains.get']('ip4_interfaces:eth0:0') -%}
+{%- set selfip = salt['grains.get']('ip4_interfaces:eth0:0') -%}
 {%- set etcdhosts = [] -%}
-{%- for k,v in salt['mine.get']('kube-*', 'grains.item', tgt_type='glob').items() -%}
+{%- for k,v in salt['mine.get']('role:k8s-master', 'grains.item', tgt_type='grain').items() -%}
 {%- set etcdhost = v['fqdn'] + '=https://' + v['ip4_interfaces']['eth0'][0] + ':2380' -%}
 {%- do etcdhosts.append(etcdhost) -%}
 {%- endfor -%}
