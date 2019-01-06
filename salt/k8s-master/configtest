@@ -1,6 +1,3 @@
 {% for k,v in salt['mine.get']('kube-*', 'grains.item', tgt_type='glob').items() %}
-fqdn: {{ v['fqdn'] }} ip: {{ v['ip4_interfaces']['eth0'][0] }}
-{% endfor %}
-{% for server, addrs in salt['mine.get']('kube-*', 'network.ip_addrs', tgt_type='glob') | dictsort() %}
-server {{ server }} {{ addrs[0] }}:80 check
+{{ v['fqdn'] }}=https://{{ v['ip4_interfaces']['eth0'][0] }}:2380
 {% endfor %}
