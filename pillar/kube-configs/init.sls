@@ -29,6 +29,8 @@ kubernetes:
         -----END PGP MESSAGE-----
     etcd:
       version: v3.3.10
+    secrets:
+      
   worker:
     runtime:
       provider: docker

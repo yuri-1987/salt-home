@@ -1,0 +1,14 @@
+{%- set dataDir = pillar['kubernetes']['worker']['runtime']['cri-o']['data-dir'] -%}
+{%- set stateDir = pillar['kubernetes']['worker']['runtime']['cri-o']['state-dir'] -%}
+{%- set logDir = pillar['kubernetes']['worker']['runtime']['cri-o']['log-dir'] -%}
+[Unit]
+Description=CRI-O daemon
+Documentation=https://github.com/kubernetes-sigs/cri-o
+
+[Service]
+ExecStart=/bin/crio --runtime /bin/runc --root {{ dataDir }} --runroot {{ stateDir }} --log {{ logDir }}/crio.log --log-level error
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
